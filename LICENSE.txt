@@ -1,0 +1,32 @@
+MIT Lisansı
+
+Telif Hakkı (c) 2016-2025 bol-van
+Telif Hakkı (c) 2024-2025 AlperenAKKAYA99
+Bütün hakları saklıdır; kodunuzu geliştirmek için özgürce kullanabilirsiniz, ancak "AlperenAKKAYA99" ifadesini belirtmeniz gerekmektedir.
+
+Yazılım ve ilişkili dokümantasyon dosyalarını ("Yazılım") edinen her kişiye, aşağıdaki şartlar kapsamında, Yazılımı kullanma, kopyalama, değiştirme, birleştirme, yayınlama, dağıtma, alt lisanslama ve/veya Yazılımın kopyalarını satma hakları ücretsiz olarak verilmektedir. Yukarıdaki telif hakkı bildirimi ve bu izin bildirimi, Yazılımın tüm kopyalarına veya önemli bölümlerine dahil edilecektir.
+
+Yazılım, "OLDUĞU GİBİ" sağlanmaktadır; ticari uygunluk, belirli bir amaca uygunluk ya da ihlal etmeme gibi durumlarda kesin hiçbir garanti verilmemektedir. Yazılımın kullanımı veya işlemlerinden doğabilecek herhangi bir talep, zarar veya yükümlülükten telif hakkı sahipleri ve/veya geliştiriciler hiçbir şekilde sorumlu tutulamaz.
+
+# Eğitim Amaçlı Kullanım ve Yasal Uyarı
+Bu yazılım yalnızca eğitim amaçlı kullanılmak üzere tasarlanmıştır. Herhangi bir ülkede mevcut yasal düzenlemelere aykırı faaliyetlerde kullanılmaması zorunludur. Yazılımın kullanımı tamamen kullanıcının sorumluluğundadır; yazılımın yanlış, yasal olmayan veya amacının dışında kullanımı sonucunda ortaya çıkabilecek her türlü hukuki sorumluluk, kullanıcıya ait olup geliştiriciler (bol-van, AlperenAKKAYA99) kesinlikle sorumlu tutulamaz. Kullanıcı, yazılımı kullanmaya başlamadan önce kendi yerel ve ulusal yasalarını göz önünde bulundurmalı ve bu yasaların izin verdiği sınırlar içerisinde hareket etmelidir.
+
+# Yasal Sorumluluk Reddi
+Yazılımın kullanımı, herhangi bir ülkede yasa dışı faaliyetlere teşvik, kolaylık sağlama veya yasal düzenlemelerin ihlaline yol açma amacı taşımamaktadır. Yazılım, hiçbir şekilde yasal sistemin ihlali, sansür ya da yasakların atlatılmasına yönelik bir araç olarak değerlendirilmemelidir. Geliştiriciler, yazılımın kullanımı sonucunda meydana gelebilecek her türlü hukuki ihtilaf, idari para cezası, zarara ilişkin talepler veya diğer hukuki süreçlerden kesinlikle sorumlu tutulamaz. Yazılımı kullanmaya devam eden kullanıcı, tüm bu hususları kabul etmiş sayılır.
+
+Bu depo, bol-van tarafından geliştirilen projeden türetilmiş ikili dosyalar içermektedir ve MIT Lisansı altında lisanslanmıştır. Ayrıca, proje, WinDivert projesine bağlıdır; bu kapsamda:
+
+GNU Lesser General Public License (LGPL) Sürüm 3 veya
+GNU General Public License (GPL) Sürüm 2
+şartları geçerlidir.
+WinDivert'in ikili dağıtımları, projeye olduğu gibi herhangi bir değişiklik yapılmadan dahil edilmiştir. WinDivert'in kaynak kodu ve lisans şartlarına şu adresten ulaşabilirsiniz:
+https://github.com/basil00/WinDivert
+
+# Projeye ilişkin lisans uyumluluğu ve bütünlüğü sağlamak amacıyla:
+
+Yukarıdaki telif hakkı bildirimleri ve bu izin bildirimi, Yazılımın tüm kopyalarına veya önemli bölümlerine dahil edilecektir.
+WinDivert kullanımının ilgili lisans şartları (LGPLv3/GPLv2) ile düzenlendiğini kabul etmiş sayılırsınız.
+Bu depo yalnızca ikili dosyalar sağlamaktadır; bol-van projesinin kaynak kodu veya WinDivert üzerinde yapılan değişiklikler bu depoda yer almamaktadır.
+
+# Atıf ve Kaynak Bilgisi
+Bu projeye ve bol-van tarafından geliştirilen projeye ait ikili dosyalar, https://github.com/bol-van/zapret adresinde mevcuttur. Kullanıcılar, yazılımı kullanırken ve/veya dağıtırken bu atıfı sağlamayı unutmamalıdır.
