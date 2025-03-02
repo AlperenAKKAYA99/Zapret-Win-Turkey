@@ -16,7 +16,7 @@ Ağ güvenliği tekniklerini anlamak için tasarlanmış bu proje, ağ protokoll
    - **`discord_2.bat`**: Alternatif Discord blokaj aşma yöntemi-2.
    - **`discord_3.bat`**: Alternatif Discord blokaj aşma yöntemi-3.
    - **`discord_4.bat`**: Alternatif Discord blokaj aşma yöntemi-4.
-   - **`discord_5.bat`**: Alternatif Discord blokaj aşma yöntemi-5 (Önerilen_DC).
+   - **`discord_5.bat`**: Alternatif Discord blokaj aşma yöntemi-5 **(Önerilen_DC)**.
    - **`general.bat`**: Genel Discord blokaj aşma.
    - **`general (Superonline).bat`**: Superonline kullanıcıları için alternatif.
    - **`general (Superonline_2).bat`**: Superonline_2 kullanıcıları için alternatif.
