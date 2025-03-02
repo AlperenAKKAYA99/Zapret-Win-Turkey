@@ -11,23 +11,23 @@ set "FILE_EXISTS=1"
 
 for /f "delims=" %%A in ('powershell -command "[datetime]::Now.ToString('yyyy-MM-dd HH:mm:ss')"') do set CURRENT_TIMESTAMP=%%A
 
-:: If file version.txt exists
+:: Eğer version.txt dosyası yoksa
 if not exist %VERSION_FILE% (
     set "FILE_EXISTS=0"
     echo time: %CURRENT_TIMESTAMP%> %VERSION_FILE%
     echo ver: %CURRENT_VERSION%>> %VERSION_FILE%
 )
 
-:: Reading data from local version.txt
+:: Yerel version.txt dosyasından veri okuma
 for /f "tokens=1,* delims=: " %%A in (%VERSION_FILE%) do (
     if "%%A"=="time" set "LAST_CHECK=%%B"
     if "%%A"=="ver" set "INSTALLED_VERSION=%%B"
     if "%%A"=="skip" set "SKIP_VERSION=%%B"
 )
 
-:: If file was called from thirdparty script (with 'soft' argument that blocks checking for 12 hours)
+:: Eğer dosya üçüncü taraf bir script tarafından çağrıldıysa (12 saatlik kontrol engelleme ile 'soft' parametresi ile)
 if "%~1"=="soft" (
-    :: Converting dates to parts for calculation
+    :: Tarihleri parçalara ayırarak hesaplama yapma
     for /f "tokens=1-6 delims=-: " %%A in ("%CURRENT_TIMESTAMP%") do (
         set "CURRENT_MONTH=%%B"
         set "CURRENT_DAY=%%C"
@@ -42,45 +42,45 @@ if "%~1"=="soft" (
     set /a "time_diff_in_minutes = (CURRENT_MONTH - LAST_MONTH) * 43200 + (CURRENT_DAY - LAST_DAY) * 1440 + (CURRENT_HOUR - LAST_HOUR) * 60"
 
     if !time_diff_in_minutes! LEQ 360 if !FILE_EXISTS!==1 (
-        echo Skipping the update check because it hasnt been 6 hours
+        echo Guncelleme kontrolu 6 saat icinde yapilmadi, atlaniyor.
         goto :EOF
     )
 )
 
-:: Reading new version from github
+:: Yeni sürümü GitHub'dan okuma
 set "NEW_VERSION="
 for /f "delims=" %%A in ('powershell -command "(Invoke-WebRequest -Uri %GITHUB_URL% -Headers @{\"Cache-Control\"=\"no-cache\"} -TimeoutSec 5).Content" 2^>nul') do set "NEW_VERSION=%%A"
 if not defined NEW_VERSION (
-    echo Error reading new version
+    echo Yeni surum okunurken hata olustu
     goto :EOF
 )
 
-:: Rewrite file
+:: Dosyayı yeniden yazma
 echo time: %CURRENT_TIMESTAMP%> %VERSION_FILE%
 echo ver: %INSTALLED_VERSION%>> %VERSION_FILE%
 echo skip: %SKIP_VERSION%>> %VERSION_FILE%
 
-:: Comparing versions
+:: Sürümleri karşılaştırma
 if "%NEW_VERSION%"=="%INSTALLED_VERSION%" (
-    echo You are using the latest version %NEW_VERSION%.
+    echo En son surum olan %NEW_VERSION% kullaniyorsunuz.
     goto :EOF
 ) else (
-    :: Check if version skipped
+    :: Sürüm atlandıysa kontrol et
     if "%NEW_VERSION%"=="%SKIP_VERSION%" (
-        echo Newer version %NEW_VERSION% skipped by user.
+        echo Kullanici tarafindan atlanan yeni surum %NEW_VERSION%.
         goto :EOF
     ) else (
-        echo New version found: %NEW_VERSION%.
-        echo Visit %RELEASE_URL% to download a new version
+        echo Yeni surum bulundu: %NEW_VERSION%.
+        echo Yeni surumu indirmek icin %RELEASE_URL%'yi ziyaret edin.
     )
 )
 
-:: Skip check
-set /p "CHOICE=Skip this update? (y/n, default: n): " || set "CHOICE=n"
+:: Güncellemeyi atla
+set /p "CHOICE=Bu guncellemeyi atlamak ister misiniz? (y/n, varsayilan: n): " || set "CHOICE=n"
 set "CHOICE=!CHOICE:~0,1!"
 if /i "!CHOICE!"=="y" (
     echo skip: %NEW_VERSION%>> %VERSION_FILE%
-    echo Update %NEW_VERSION% skipped.
+    echo %NEW_VERSION% surumu atlandi.
 ) else (
     start %RELEASE_URL%
 )
