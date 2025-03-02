@@ -47,6 +47,6 @@ Bu proje, [MIT Lisansı](https://opensource.org/licenses/MIT) ile lisanslanmış
 
 ## Atıf ve Kaynaklar
 
-- [Zapret](https://github.com/bol-van/zapret)
-- [WinDivert](https://github.com/basil00/WinDivert)
-- [zapret-winws](https://github.com/elitrao/zapret-winws)
+- [bol-van/zapret](https://github.com/bol-van/zapret)
+- [basil00/WinDivert](https://github.com/basil00/WinDivert)
+- [elitrao/zapret-winws](https://github.com/elitrao/zapret-winws)
